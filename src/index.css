@@ -1,0 +1,459 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings:"slnt" 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+nav{
+    padding-inline: 4.69rem;
+    
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#4a90e2 ;
+  }
+
+/* handeling-navbar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8d8d8;
+    padding-block: 1rem;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+
+
+    
+}
+.menu-ul{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+
+/* handling-hero-section */
+nav img{
+  height:4.6rem;
+}
+
+.hero-section{
+   align-content: center;
+    height: 100vh;
+   background-image: linear-gradient(rgba(255, 255, 255, 0.062) , rgba(255, 255, 255, 0.11) ),url("./Images/HeroSectionImg.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-inline: 4.69rem;
+   
+   
+
+
+
+}
+
+.hero-section h2{
+    font-size: 3rem;
+    margin-bottom: .9rem;
+ }
+ .hero-section button{
+    background-color: #7ed321   ;
+    padding-inline: 1rem;
+    padding-block: .5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 5px;
+    
+
+ }
+ .que-heading{
+  display: inline-block;
+  background-color: #d8d8d8;
+}
+.grades{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 4.69rem;
+    gap: 6rem;
+    padding-block: 2.69rem;
+    margin-bottom: 3rem;
+}
+.grade img{
+  width: 100%  !important;
+  height: 100%;
+}
+.footer-img{
+  width: 10.8rem;
+  height: 4.7rem;
+}
+.grade-6{
+  display: flex;
+}
+.lesson-display{
+ 
+  width: 75%;
+  height: 90vh;
+  padding-inline: 4rem;
+  padding-block: 2rem;
+}
+.lessons{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25%;
+  padding-block: 2rem;
+  
+  a{
+    text-decoration: none;
+    color: black;
+   
+    background-color: #7ed321;
+  }
+}
+.grade{
+    width: calc(100% / 3 - 12rem);
+    height: 40vh;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display:  block !important;
+   
+}
+.active{
+  background-color: #d8d8d8;
+  color: black;
+}
+.grade-4{
+  padding-inline: 4.69rem;
+  margin-top: 9rem;
+  display: flex;
+  justify-items:center;
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.lesson{
+  background-color: red;
+  width: 50%;
+}
+.socail-studies-main{
+  padding-inline: 4.69rem;
+}
+footer{
+  background-color: #d8d8d8;
+  padding-inline: 4.69rem;
+  margin-top: 3rem;
+  padding-block: 1rem;
+  
+  
+}
+.login{
+  background-color: #7ed321;
+  width: 6rem;
+  border-radius: 5px;
+ 
+}
+.logo-container{
+  cursor: pointer;
+
+}
+.login{
+  cursor:pointer;
+}
+span a i{
+  color: black;
+  font-size: 1.1rem;
+}
+.more{
+  background-color: #7ed321;
+  width: 6rem;
+  border-radius: 5px;
+}
+#al-idrisi-more{
+  display: none;
+}
+#al-idrisi-less-btn{
+  display: none;
+}
+.must-login{
+  position: fixed;
+  z-index: 9999999;
+  width: 100vw;
+  height: 100vh;
+  
+  text-align: center;
+  align-content: center;
+  
+  background-color: rgba(0, 0, 0, 0.178);
+  display: none;
+
+
+
+
+ 
+  button{
+    background-color: #7ed321;
+    border-radius: 6px;
+    height: 2rem;
+    width: 7rem;
+  }
+  .grade{
+    width: calc(100% / 3 - 12rem);
+    height: 40vh;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+   
+   
+}
+  .not-now{
+    background-color: rgb(225, 225, 225);
+    border-radius: 6px;
+    height: 2rem;
+    width: 7rem;
+
+  }
+  .must-login-container{
+    position: fixed;
+    background-color: red;
+    display: inline-block;
+    height: 30vh;
+    padding-inline: 2rem;
+    padding-block: 1.4rem;
+    align-content: center;
+    background-color: rgb(225, 225, 225);
+    box-shadow: 5px 5px 5px 0.1;
+   border-radius: 6px;
+   left:calc(50% - 9rem) ;
+   right: calc(50% - 9rem);
+   top: 40%;
+   bottom: 40%;
+   
+   
+    
+  }
+  
+}
+button{
+  cursor: pointer;
+}
+#must-login .must-login-container .x{
+  background-color:rgb(225, 225, 225) ;
+  
+  text-align: right;
+  font-size: 1.1rem;
+  display: inline-block;
+ 
+  width: 1.1rem ;
+  
+
+}
+.tabs{
+  padding-block: 13rem;
+  padding-inline: 4.69rem;
+ 
+}
+footer{
+  position: absolute;
+  width: 100%;
+}
+.tabs-btns button{
+
+  font-size: 1.1rem;
+  font-weight: bold;
+  
+}
+.tabs-btns{
+
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.active{
+  background-color:#d8d8d8;
+  height: 3rem;
+  
+}
+.tabs-container {
+  padding-block: 3rem;
+}
+.tabs-container div{
+  
+  display:none ;
+}
+.tabs-container .active-content{
+  display: block;
+}
+#unit-1-lessons-grade-4  , #unit-2-lessons-grade-4 ,#unit-3-lessons-grade-4  {
+
+  z-index: 99999;
+  position: fixed;
+
+  padding-inline: 4.69rem;
+  padding-block: 1rem;
+  
+  margin-inline: 4.69rem;
+  height: 80vh;
+  display: none;
+  
+  
+  
+}
+
+#unit-1-lessons-grade-4 img ,#unit-2-lessons-grade-4 img, #unit-3-lessons-grade-4 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.151);
+   
+    display: none;
+
+}
+#close-lesson-grade-4-1 ,#close-lesson-grade-4-2 ,#close-lesson-grade-4-3{
+ width: 6rem;
+ height: 3rem;
+ 
+ border-top-left-radius: 5px;
+ border-top-right-radius: 5px;
+ 
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.151);
+  
+}
+.unit li{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#unit-1-lessons img ,#unit-2-lessons img ,#unit-3-lessons img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.151);
+  display: none ;
+
+}
+.active-lesson{
+  display: block !important;
+}
+.img-slider{
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  
+}
+.img-slider .next , .img-slider .prev{
+  font-size: 3rem;
+  align-items: center;
+  background-color: yellow;
+  height: 100%;
+  
+}
+
+.img-slider img{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.active-img{
+  display: block !important;
+}
+.feedback{
+
+  width: 40%;
+
+}
+
+ul{
+  text-align: start;
+  
+  button{
+
+  
+    text-align: start;
+  }
+}
+@media (max-width: 768px){
+  #unit-1-lesson{
+    background-color: red;
+    padding: 0;
+    
+   
+
+  }
+  #lesson img{
+
+  }
+  .tabs-btns{
+    flex-direction: column;
+  }
+  .menu-ul{
+    display: flex;
+    gap: .91rem;
+    justify-content: space-between;
+    text-align: center;
+  }
+  #home ,#test , #learn ,#dashboard{
+    font-size: 2rem;
+  }
+  nav{
+    display: block;
+    padding-inline: 2rem;
+  }
+  .hero-section{
+    text-align: center;
+  }
+  .grades{
+    flex-direction: column;
+    
+
+  
+  }
+  .grade h2{
+    display: block;
+
+  
+  }
+  .grade{
+    width: 100%;
+    text-align: center;
+
+    
+  }
+  .grade img{
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+}
+
+

@@ -1,0 +1,105 @@
+main {
+    padding: 2rem;
+  }
+  
+  .lesson-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .lesson-container h2 {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+  
+  button {
+ 
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    border-radius: 5px;
+    display: inline-block;
+    direction: rtl;
+    margin-bottom: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: transparent;
+  }
+  
+  div.quiz {
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  button.close {
+    background-color:#7ed321;
+    
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: right;
+  }
+  
+  input[type="radio"] {
+    margin-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #7ed321;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+  }
+  
+
+  input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 16px;
+    border: 2px solid #7ed321;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  select option {
+    padding: 0.5rem;
+    background-color: white;
+    color: #333;
+    list-style-type: none;
+  }
+  
