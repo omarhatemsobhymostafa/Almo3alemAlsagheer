@@ -3,16 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://omarhatemsobhymostafa.github.io/Al_idrisi",
   "scripts": {
-    "deploy": "gh-pages -d build",
-    
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "homepage":"https://omarhatemsobhymostafa.github.io/Al_idrisi",
     "axios": "^1.7.7",
     "chart.js": "^4.4.6",
     "dotenv": "^16.4.5",
