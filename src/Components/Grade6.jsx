@@ -1,62 +1,36 @@
-import { forEach, map } from "lodash";
-import React, { useState } from "react";
-import { Link, Outlet } from 'react-router-dom';
-
-const Grade6 = () => {
-  const quizzes = [
-    {
-      title: "الاختبار الأول",
-      questions: [
-        { question: "ما هو عاصمة مصر؟", options: ["القاهرة", "الإسكندرية", "أسوان", "الأقصر"], answer: "القاهرة" },
-        { question: "ما هو عدد كواكب المجموعة الشمسية؟", options: ["7", "8", "9", "10"], answer: "8" },
-        { question: "ما هي اللغة الرسمية في فرنسا؟", options: ["الإنجليزية", "الإسبانية", "الفرنسية", "الألمانية"], answer: "الفرنسية" },
-        { question: "ما هو أعلى جبل في العالم؟", options: ["إفرست", "كليمنجارو", "أكونكاجوا", "مونت بلانك"], answer: "إفرست" },
-        { question: "ما هو البحر الذي يحيط بجزيرة العرب؟", options: ["البحر الأحمر", "الخليج العربي", "بحر العرب", "المحيط الهندي"], answer: "بحر العرب" },
-        { question: "ما هو الكوكب الأحمر؟", options: ["عطارد", "المريخ", "الأرض", "المشتري"], answer: "المريخ" },
-        { question: "ما هو أصغر قارة في العالم؟", options: ["أستراليا", "أوروبا", "آسيا", "أفريقيا"], answer: "أستراليا" },
-        { question: "من هو مكتشف الجاذبية؟", options: ["أينشتاين", "نيوتن", "غاليلو", "داروين"], answer: "نيوتن" },
-        { question: "ما هي عملة اليابان؟", options: ["الدولار", "اليورو", "الين", "اليوان"], answer: "الين" },
-        { question: "ما هي أكبر صحراء في العالم؟", options: ["صحراء الكبرى", "صحراء أتاكاما", "صحراء غوبي", "صحراء فيكتوريا"], answer: "صحراء الكبرى" },
-      ],
-    },
-    {
-      title: "الاختبار الثاني",
-      questions: [
-        { question: "من هو مخترع المصباح الكهربائي؟", options: ["أديسون", "تسلا", "ماركوني", "فرانكلين"], answer: "أديسون" },
-        { question: "ما هي عاصمة ألمانيا؟", options: ["برلين", "فرانكفورت", "هامبورغ", "ميونيخ"], answer: "برلين" },
-        { question: "ما هو الحيوان الذي يطلق عليه ملك الغابة؟", options: ["الأسد", "النمر", "الفهد", "الذئب"], answer: "الأسد" },
-        { question: "ما هي اللغة الرسمية في إيطاليا؟", options: ["الإسبانية", "الإيطالية", "الفرنسية", "الإنجليزية"], answer: "الإيطالية" },
-        { question: "ما هو الكوكب الأقرب إلى الشمس؟", options: ["عطارد", "الزهرة", "الأرض", "المريخ"], answer: "عطارد" },
-        { question: "ما هي عملة المملكة المتحدة؟", options: ["الدولار", "الجنيه الإسترليني", "اليورو", "الين"], answer: "الجنيه الإسترليني" },
-        { question: "ما هو أكبر محيط في العالم؟", options: ["المحيط الهادئ", "المحيط الأطلسي", "المحيط الهندي", "المحيط المتجمد الشمالي"], answer: "المحيط الهادئ" },
-        { question: "ما هو العضو الذي يضخ الدم في جسم الإنسان؟", options: ["الكبد", "القلب", "الكلى", "الرئتين"], answer: "القلب" },
-        { question: "ما هي عاصمة اليابان؟", options: ["بكين", "طوكيو", "سول", "مانيلا"], answer: "طوكيو" },
-        { question: "من هو مكتشف أمريكا؟", options: ["كولومبوس", "ماجلان", "فاسكو دا غاما", "ماركو بولو"], answer: "كولومبوس" },
-      ],
-    },
-  ];
-  
-  
-
+import React from 'react'
+import { NavLink ,Outlet} from 'react-router-dom'
+export default function Grade6() {
+  const unit1 = {
+    name: "وحدة أرض وتاريخ شعب",
+    lessons: [
+      { title: "الموقع الجغرافي لوطننا العربي", number: 1 },
+      { title: "قصّة ظهور الإسلام", number: 2 },
+      { title: "هجرة الرسول (صلى الله عليه وسلم) وتأسيس الدولة الإسلامية", number: 3 },
+      { title: "لمحات من حياة الخلفاء الراشدين", number: 4 }
+    ]
+  };
 
   return (
-   <main style={{marginTop:9+"rem" ,paddingInline:4.69+'rem'}}>
-    <div className="grade-6">
+    <main style={{ paddingBlock: 9 + 'rem', paddingInline: 4.69 + 'rem' ,minWidth:100+"vh"}}>
+      <div className="grade-6">
+        <div className="lessons">
+          <p>الوحدة الأولى: وحدة أرض وتاريخ شعب</p>
+          {
+            unit1.lessons.map((lesson, index) => (
+              <NavLink  to={`quiz${lesson.number}`}>
+                {lesson.title}
+              </NavLink>
+            ))
+          }
 
-    <div className="lessons">
-        {
-          quizzes.map((quiz)=>(
-            <Link to={`quizzes/${quiz.questions}/${quiz}`}>{quiz.title}</Link>
-          ))
-        }
-    </div>
-    <div className="lesson-display">
-      <Outlet />
-    </div>
-    </div>
 
-   </main>
-  );
-};
+        </div>
+        <div className="lesson-display">
+          <Outlet />
+        </div>
+      </div>
+    </main>
+  )
+}
 
-export default Grade6;

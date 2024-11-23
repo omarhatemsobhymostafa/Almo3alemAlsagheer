@@ -114,16 +114,18 @@ nav img{
 }
 .lesson-display{
  
-  width: 75%;
-  height: 90vh;
-  padding-inline: 4rem;
-  padding-block: 2rem;
+  width: 70%;
+
+ padding-right: 4rem;
+  
+  
+  
 }
 .lessons{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 25%;
+  width: 30%;
   padding-block: 2rem;
   
   a{
@@ -131,6 +133,7 @@ nav img{
     color: black;
    
     background-color: #7ed321;
+    padding: .4rem;
   }
 }
 .grade{
@@ -158,7 +161,7 @@ nav img{
   }
 }
 .lesson{
-  background-color: red;
+
   width: 50%;
 }
 .socail-studies-main{
@@ -169,9 +172,11 @@ footer{
   padding-inline: 4.69rem;
   margin-top: 3rem;
   padding-block: 1rem;
+  z-index: 999;
   
   
 }
+
 .login{
   background-color: #7ed321;
   width: 6rem;
@@ -279,10 +284,7 @@ button{
   padding-inline: 4.69rem;
  
 }
-footer{
-  position: absolute;
-  width: 100%;
-}
+
 .tabs-btns button{
 
   font-size: 1.1rem;
@@ -400,6 +402,37 @@ ul{
   
     text-align: start;
   }
+}
+.reset{
+  background-color: #4a90e2;
+  width: 7.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 7px;
+  margin-top: .6rem;
+  margin-bottom: 1rem;
+}
+.submit{
+  background-color: #7ed321;
+  width: 7.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 7px;
+  margin-top: .6rem;
+}
+.desc{
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  margin-bottom: 2rem;
+}
+.video{
+  width: 100%;
+  height: 75vh;
+  margin-bottom: 3rem;
+}
+.active{
+  background-color: #4a90e2 !important;
 }
 @media (max-width: 768px){
   #unit-1-lesson{
