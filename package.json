@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://omarhatemsobhymostafa.github.io/Al_idrisi",
+
   "scripts": {
     "deploy": "gh-pages -d dist",
     "dev": "vite",
