@@ -1,79 +1,205 @@
-import { toArray, toString } from 'lodash';
+import { includes, toArray, toString } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import video3 from "../Videos/3-الدرس الثالث الوحدة الاولى/L3.mp4"
 
 export default function Quiz3() {
     const questions = [
         {
-            question: "خطّط الرسول صلى الله عليه وسلم للهجرة فأمرر الهجرة _______ تامة لئلا ...",
-            options: ["بسرية", "بجهر", "بسرعة"],
-            answer: "بسرية",
-            desc: "الهجرة النبوية كانت أحد أهم الأحداث في تاريخ الإسلام، حيث خطط الرسول صلى الله عليه وسلم للهجرة بسرية تامة لحماية نفسه وأصحابه من بطش قريش. لم يُفشَ أمر الهجرة إلا للذين شاركوا في تنفيذ الخطة، مثل أبو بكر الصديق رضي الله عنه، وعلي بن أبي طالب الذي نام في فراش الرسول لخداع قريش."
+            "id": 1,
+            "question": "ماذا حاولت قريش فعله لمنع الهجرة إلى المدينة؟",
+            "options": [
+                "فرضت جزية",
+                "حاولت قتل الرسول صلى الله عليه وسلم",
+                "منعت التجارة",
+                "أغلقت الطرق"
+            ],
+            "answer": "حاولت قتل الرسول صلى الله عليه وسلم",
+            "desc": "قريش كانت تشعر بالتهديد من انتشار الإسلام فخططت لقتل الرسول صلى الله عليه وسلم لمنع الهجرة."
         },
         {
-            question: "آخى الرسول صلى الله عليه وسلم بين المهاجرين و _______ لتكوين مجتمع متماسك.",
-            options: ["الأوس", "الأنصار", "القرشيين"],
-            answer: "الأنصار",
-            desc: "بعد وصول الرسول صلى الله عليه وسلم إلى المدينة، آخى بين المهاجرين والأنصار لتأسيس مجتمع قوي ومتماسك. كان هذا الإخاء مثالًا فريدًا للتضامن الإسلامي، حيث تقاسم الأنصار أموالهم ومنازلهم مع المهاجرين، مما ساهم في بناء دولة إسلامية قوية."
+            "id": 2,
+            "question": "في أي عام حدثت غزوة بدر؟",
+            "options": [
+                "الأول",
+                "الثاني",
+                "الثالث",
+                "الرابع"
+            ],
+            "answer": "الثاني",
+            "desc": "غزوة بدر حدثت في السنة الثانية من الهجرة وكانت انتصاراً مهماً للمسلمين."
         },
         {
-            question: "في غزوة أحد تحوّل النصر إلى هزيمة بسبب مخالفة _______ لأوامر الرسول.",
-            options: ["الرماة", "الفرسان", "المشاة"],
-            answer: "الرماة",
-            desc: "في غزوة أحد، أمر الرسول صلى الله عليه وسلم الرماة بالبقاء في مواقعهم على الجبل وعدم تركها مهما حدث. لكن بعض الرماة خالفوا الأمر ونزلوا لجمع الغنائم عندما اعتقدوا أن المعركة انتهت، مما أدى إلى هجوم مفاجئ من خالد بن الوليد على المسلمين وانقلاب النصر إلى هزيمة."
+            "id": 3,
+            "question": "من الذي ساعد الرسول صلى الله عليه وسلم في الهجرة؟",
+            "options": [
+                "عمر بن الخطاب",
+                "أبو بكر الصديق",
+                "عثمان بن عفان",
+                "علي بن أبي طالب"
+            ],
+            "answer": "أبو بكر الصديق",
+            "desc": "أبو بكر الصديق كان مع الرسول صلى الله عليه وسلم في الهجرة إلى المدينة المنورة."
         },
         {
-            question: "أشار سلمان الفارسي على النبي صلى الله عليه وسلم بحفر _______ حول المدينة لحمايتها.",
-            options: ["الخندق", "البئر", "السد"],
-            answer: "الخندق",
-            desc: "عندما تحالفت قريش والأحزاب لمهاجمة المدينة المنورة، أشار سلمان الفارسي رضي الله عنه بحفر خندق حول المدينة كوسيلة دفاعية جديدة على العرب. كان الخندق سببًا في إفشال هجوم الأحزاب وحماية المسلمين، وأظهر عبقرية التخطيط العسكري للرسول صلى الله عليه وسلم."
+            "id": 4,
+            "question": "ما الذي تحول في غزوة أحد؟",
+            "options": [
+                "النصر إلى هزيمة بسبب خيانة الرماة",
+                "الهزيمة إلى نصر بسبب الخيانة",
+                "الصلح بين المسلمين والكفار",
+                "الغزوة إلى هدنة"
+            ],
+            "answer": "النصر إلى هزيمة بسبب خيانة الرماة",
+            "desc": "في غزوة أحد، كان النصر للمسلمين في البداية لكن بسبب ترك الرماة لمواقعهم، حدث تحول لصالح قريش."
         },
         {
-            question: "اجتمع زعماء قريش في دار _______ وقرروا قتل الرسول لكنهم فشلوا.",
-            options: ["الحكمة", "العلوم", "الندوة", "الشعب"],
-            answer: "الندوة",
-            desc: "دار الندوة كانت مكان اجتماع زعماء قريش للتشاور في أمورهم الهامة. قرروا في هذا الاجتماع قتل الرسول صلى الله عليه وسلم، ولكن الله سبحانه وتعالى أحبط مؤامرتهم، ونجح النبي في الهجرة إلى المدينة بفضل تخطيطه المحكم وعناية الله."
+            "id": 5,
+            "question": "من قام بتوجيه نصيحة حفر الخندق حول المدينة؟",
+            "options": [
+                "سعد بن أبي وقاص",
+                "سلمان الفارسي",
+                "أبو هريرة",
+                "عبد الله بن مسعود"
+            ],
+            "answer": "سلمان الفارسي",
+            "desc": "سلمان الفارسي اقترح حفر الخندق أثناء غزوة الخندق لحماية المدينة من هجوم قريش."
         },
         {
-            question: "حدثت غزوة بدر في العام _______ من الهجرة.",
-            options: ["الأول", "الثاني", "الثالث", "الرابع"],
-            answer: "الثاني",
-            desc: "غزوة بدر الكبرى وقعت في العام الثاني من الهجرة، وكانت أول معركة كبرى بين المسلمين وقريش. حقق المسلمون نصرًا عظيمًا رغم قلة عددهم وعدتهم مقارنة بجيش قريش، وكان هذا النصر دعمًا معنويًا كبيرًا للمسلمين."
+            "id": 6,
+            "question": "ما الذي فعلته قريش في صلح الحديبية؟",
+            "options": [
+                "رفضت التفاوض",
+                "قامت بقتل المسلمين",
+                "نقضت الاتفاق بعد عامين",
+                "اعتنقت الإسلام"
+            ],
+            "answer": "نقضت الاتفاق بعد عامين",
+            "desc": "قريش نقضت الاتفاق بعد عامين عندما اعتدت على حلفاء المسلمين."
         },
         {
-            question: "انهزم المسلمون في غزوة _______ بسبب مخالفة الرماة لأوامر الرسول صلى الله عليه وسلم.",
-            options: ["بدر", "أحد", "الخندق", "فتح مكة"],
-            answer: "أحد",
-            desc: "غزوة أحد كانت اختبارًا لصبر المسلمين وإيمانهم. رغم أن المسلمين بدؤوا المعركة بانتصار واضح، إلا أن مخالفة الرماة لأوامر الرسول صلى الله عليه وسلم أدت إلى هجوم مضاد من قريش، مما تسبب في هزيمة المسلمين."
+            "id": 7,
+            "question": "ما هو اسم المدينة التي هاجر إليها الرسول صلى الله عليه وسلم؟",
+            "options": [
+                "مكة",
+                "المدينة المنورة",
+                "بدر",
+                "الطائف"
+            ],
+            "answer": "المدينة المنورة",
+            "desc": "المدينة المنورة هي المكان الذي هاجر إليه الرسول صلى الله عليه وسلم، وكانت نقطة تحول في تاريخ الإسلام."
         },
         {
-            question: "كانت مدة الهدنة في صلح الحديبية _______ سنوات.",
-            options: ["سبع", "ثمان", "تسع", "عشر"],
-            answer: "عشر",
-            desc: "صلح الحديبية كان اتفاقًا بين المسلمين وقريش ينص على هدنة لمدة عشر سنوات. على الرغم من أن الشروط بدت ظالمة للمسلمين، إلا أن هذا الصلح أتاح فرصة لنشر الدعوة الإسلامية بحرية وتهيئة الظروف لفتح مكة."
+            "id": 8,
+            "question": "لماذا قام الرسول صلى الله عليه وسلم ببناء المسجد بعد الهجرة؟",
+            "options": [
+                "لتعليم القرآن",
+                "لاحتضان الأنصار والمهاجرين",
+                "ليكون مقرًا للحكومة",
+                "كل ما سبق"
+            ],
+            "answer": "كل ما سبق",
+            "desc": "بناء المسجد كان هدفه تعليم الدين، وكان مقرًا للشؤون الاجتماعية والسياسية."
         },
         {
-            question: "توفي الرسول صلى الله عليه وسلم في سنة _______ من الهجرة.",
-            options: ["13", "12", "11", "10"],
-            answer: "11",
-            desc: "توفي الرسول صلى الله عليه وسلم في السنة الحادية عشرة من الهجرة بعد أن أكمل رسالته ونشر الإسلام. كانت وفاته حدثًا مؤلمًا للمسلمين، لكنه كان بداية لانتشار الإسلام في أرجاء العالم."
+            "id": 9,
+            "question": "ما هي أول معركة انتصر فيها المسلمون بعد الهجرة؟",
+            "options": [
+                "غزوة بدر",
+                "غزوة أحد",
+                "غزوة الخندق",
+                "فتح مكة"
+            ],
+            "answer": "غزوة بدر",
+            "desc": "غزوة بدر كانت أول معركة هامة انتصر فيها المسلمون ضد قريش."
         },
         {
-            question: "كان هو صديق الرسول صلى الله عليه وسلم في الهجرة إلى المدينة _______.",
-            options: ["أبو بكر الصديق", "علي بن أبي طالب", "عمر بن الخطاب", "عثمان بن عفان"],
-            answer: "أبو بكر الصديق",
-            desc: "رافق أبو بكر الصديق رضي الله عنه الرسول صلى الله عليه وسلم في الهجرة، وكان له دور كبير في تأمين الرحلة وتوفير الحماية. كان أبو بكر مثالًا للوفاء والصداقة الحقيقية، وخلّد التاريخ هذا الموقف العظيم."
+            "id": 10,
+            "question": "كيف انتهت غزوة الخندق؟",
+            "options": [
+                "بهزيمة المسلمين",
+                "بانتصار قريش",
+                "بانتصار المسلمين دون قتال",
+                "بصلح بين الطرفين"
+            ],
+            "answer": "بانتصار المسلمين دون قتال",
+            "desc": "غزوة الخندق انتهت بعد أن فشل قريش في اختراق الخندق وانسحبوا."
+        },
+        {
+            "id": 11,
+            "question": "ما هو سبب فتح مكة؟",
+            "options": [
+                "نقض قريش للصلح",
+                "غزو المدينة",
+                "انتشار الإسلام في مكة",
+                "قتل الصحابة"
+            ],
+            "answer": "نقض قريش للصلح",
+            "desc": "قريش نقضت صلح الحديبية واعتدت على حلفاء المسلمين، مما جعل الرسول صلى الله عليه وسلم يقرر فتح مكة."
+        },
+        {
+            "id": 12,
+            "question": "ما الذي أدى إلى انتصار المسلمين في غزوة بدر؟",
+            "options": [
+                "كثرة عدد المسلمين",
+                "استراتيجيات الرسول العسكرية",
+                "ضعف جيش قريش",
+                "تدخّل الملائكة"
+            ],
+            "answer": "تدخّل الملائكة",
+            "desc": "الملائكة أمدّت المسلمين بالقتال في غزوة بدر، مما كان سببًا رئيسيًا في نصرهم."
+        },
+        {
+            "id": 13,
+            "question": "ما هو السبب في بناء الرسول صلى الله عليه وسلم للمدينة المنورة كمجتمع موحد؟",
+            "options": [
+                "وجود فتنة في مكة",
+                "لتطبيق النظام والعدل",
+                "لمكانة مكة الدينية",
+                "للاستراحة"
+            ],
+            "answer": "لتطبيق النظام والعدل",
+            "desc": "المدينة كانت تعتبر مركزًا لبناء الدولة الإسلامية على أسس من النظام والعدل."
+        },
+        {
+            "id": 14,
+            "question": "في أي عام توفي الرسول صلى الله عليه وسلم؟",
+            "options": [
+                "10 هـ",
+                "11 هـ",
+                "12 هـ",
+                "13 هـ"
+            ],
+            "answer": "11 هـ",
+            "desc": "توفي الرسول صلى الله عليه وسلم في السنة 11 هـ بعد أن أكمل رسالته."
+        },
+        {
+            "id": 15,
+            "question": "ما هو الهدف من بناء صحيفة المدينة؟",
+            "options": [
+                "تنظيم الحياة السياسية",
+                "تنظيم حقوق وواجبات المواطنين",
+                "نشر السلام بين المسلمين واليهود",
+                "كل ما سبق"
+            ],
+            "answer": "كل ما سبق",
+            "desc": "صحيفة المدينة كانت تهدف إلى تنظيم الحياة السياسية والاجتماعية، وضمان حقوق وواجبات جميع سكان المدينة، بما فيهم اليهود."
         }
-    ];
-
+    ]
+    
+    
+    
 
     const [SelectedAnswer3, setSelectedAnswer3] = useState([]);
     const [QuizSubmitted3, setQuizSubmitted3] = useState(false);
     const [QuizScore3, setQuizScore3] = useState(0);
+    const [Message3 , setMessage3] = useState('')
+
     useEffect(() => {
         const storedScore = localStorage.getItem('QuizScore3');
         const storedAnswers = localStorage.getItem('SelectedAnswer3');
+        const storedMessage3 = localStorage.getItem('SelectedMessage3');
 
         if (storedScore) {
             setQuizScore3(parseInt(storedScore));
@@ -81,26 +207,27 @@ export default function Quiz3() {
         }
 
         if (storedAnswers) {
-            try {
+           
                 setSelectedAnswer3(JSON.parse(storedAnswers));
-            } catch (error) {
-                console.error("خطأ أثناء استرجاع الإجابات:", error);
-                setSelectedAnswer3([]);
-            }
+            
         }
+  
     }, []);
-    const AnswerSelection = (questionIndex, selectedAnswer) => {
-        const newAnswers = [...SelectedAnswer3];
-        newAnswers[questionIndex] = selectedAnswer;
-        setSelectedAnswer3(newAnswers);
-    };
 
+    const AnswerSelection = (questionIndex, answer) => {
+        const updatedAnswers = [...SelectedAnswer3];
+        updatedAnswers[questionIndex] = answer;
+        setSelectedAnswer3(updatedAnswers);
+
+        
+        
+    };
+    const CommpleteMessage3= "لم يتم اختيار جميع الاجابات من فضلك اجب علي جميع الاسئلة"
     const SubmitQuiz = (event) => {
         event.preventDefault();
-
+        
         let score = 0;
         console.log(SelectedAnswer3);
-        window.scrollTo(0, 0);
 
 
         questions.forEach((question, index) => {
@@ -110,8 +237,17 @@ export default function Quiz3() {
         });
 
         setQuizScore3(score);
-        setQuizSubmitted3(true);
+        if (SelectedAnswer3.includes(undefined)) {
+            setQuizSubmitted3(false);
+            setMessage3(CommpleteMessage3)
+          }
+          
+          if (!SelectedAnswer3.includes(undefined)) {
+            localStorage.setItem('QuizScore3', score.toString());
+            setQuizSubmitted3(true);
+         window.scrollTo(0, 700);
 
+          }
 
         const sanitizedAnswers = SelectedAnswer3.map(answer => {
             if (typeof answer === "string") {
@@ -121,20 +257,12 @@ export default function Quiz3() {
         });
 
 
-        localStorage.setItem('QuizScore3', score.toString());
+
         localStorage.setItem('SelectedAnswer3', JSON.stringify(sanitizedAnswers));
+        localStorage.setItem('SelectedMessage3' , CommpleteMessage3)
+        console.log(SelectedAnswer3)
 
     };
-
-
-    let percentColor = '';
-    const percent = (QuizScore3 * 100) / questions.length;
-    if (percent >= 50) {
-        percentColor = '#11C27C';
-    } else if (percent < 50) {
-        percentColor = '#E20D47';
-    }
-
     const resetQuiz = () => {
         setSelectedAnswer3([]);
         setQuizScore3(0);
@@ -143,12 +271,19 @@ export default function Quiz3() {
         localStorage.removeItem('QuizScore3');
         localStorage.removeItem('SelectedAnswer3');
     };
-
+    let percentColor = '';
+    const percent = (QuizScore3 * 100) / questions.length;
+    if (percent >= 50) {
+        percentColor = '#11C27C';
+    } else if (percent < 50) {
+        percentColor = '#E20D47';
+    }
     return (
         <div className="quiz">
-            {!QuizSubmitted3 && (
+           <video src={video3} className="video" controls></video>
+            {!QuizSubmitted3 && ( 
                 <form onSubmit={SubmitQuiz}>
-                     <p>عدد الأسئلة : {questions.length}</p>
+                    <p>عدد الأسئلة : {questions.length}</p>
                     {questions.map((question, questionIndex) => (
                         <div key={questionIndex}>
                             <h3>{question.question}</h3>
@@ -159,8 +294,8 @@ export default function Quiz3() {
                                         name={`question-${questionIndex}`}
                                         id={`option-${questionIndex}-${optionIndex}`}
                                         value={option}
-                                        checked={SelectedAnswer3[questionIndex] === option}
-                                        onChange={() => AnswerSelection(questionIndex, option)}
+                                        checked={SelectedAnswer3[questionIndex] === option} 
+                                        onChange={() => AnswerSelection(questionIndex, option)} 
                                     />
                                     {option}
                                     <br />
@@ -168,6 +303,12 @@ export default function Quiz3() {
                             ))}
                         </div>
                     ))}
+          
+          
+                 {
+               
+               }
+               <h3>{Message3}</h3>
                     <button type="submit" className='submit'>انهاء الاختبار</button>
                 </form>
             )}
@@ -231,6 +372,7 @@ export default function Quiz3() {
                             <p>نصيحة للمستقبل: من المهم أن تركز على مراجعة المادة بشكل شامل. أبدأ بمراجعة الأساسيات، وإذا لزم الأمر، يمكننا ترتيب جلسات إضافية لشرح النقاط الصعبة. لا تيأس، التحسن يتطلب وقتًا.</p>
                         </div>
                     ) : null}
+                  
                     <button onClick={resetQuiz} className='reset'>
                         اعادة الاختبار
                     </button>
@@ -259,7 +401,6 @@ export default function Quiz3() {
 
                         ))
                     }
-
                 </div>
             )}
         </div>

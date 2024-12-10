@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Images/ألادريسس.png'
+import Logo from '../Images/logo.png'
 
 export default function Footer() {
   return (
@@ -10,11 +10,11 @@ export default function Footer() {
         <p>للمزيد من المعلومات، تواصلوا معنا عبر البريد الإلكتروني <i className="fa-regular fa-envelope"></i> :
             omar.hatem.okasha@gmail.com</p>
         <p>و تواصلوا معنا عبر الواتس اب <i className="fab fa-whatsapp"></i> :01224653326</p>
-        <p/> <strong>خدماتنا</strong> : نقدم ملخصات دروس مادة الدراسات الاجتماعية للصف الرابع والخامس والسادس الابتدائي
-            <br/>و اختبار علي كل درس و وحدة لمعرفة مستوي الطالب <br/> ونقدم مصادر للتعلم اكثر ونساعد علي تشجيع الطفل
+        <p/> <strong>خدماتنا</strong> : نقدم شرح ملخص علي دروس مادة الدراسات الاجتماعية للصف السادس الابتدائي
+            <br/>و اختبار علي كل درس  لمعرفة مستوي الطالب <br/> ونقدم مصادر للتعلم اكثر ونساعد علي تشجيع الطفل
             للتعلم
         <p/>
-        <p><strong>الفئة المستهدفة</strong> : تلاميذ الصف الرابع والخامس والسادس الابتدائي </p>
+        <p><strong>الفئة المستهدفة</strong> : تلاميذ الصف السادس الابتدائي </p>
 
         <p> أنشأُه عمر حاتم عكاشه</p>
     </footer>
