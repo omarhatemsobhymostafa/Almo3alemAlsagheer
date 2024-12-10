@@ -3,14 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "deploy": "gh-pages -d dist",
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "dependencies": {
+    "homepage":"http://omarhatemsobhymostafa.github.io/the_little_teacher",
     "axios": "^1.7.7",
     "chart.js": "^4.4.6",
     "dotenv": "^16.4.5",
